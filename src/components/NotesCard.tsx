@@ -50,15 +50,32 @@ const filteredNotes=Notes.filter((note)=>(
         placeholderTextColor="#888"
       />
       
-      <FlatList
-        data={filteredNotes}
-        renderItem={({item}) => (
-           <NotesCard title={item.title} preview={item.preview} date={item.date} darkMode={darkMode}/>
-        )}
-        keyExtractor={(item) => item.id.toString()}
-        contentContainerStyle={styles.listContent}
-        showsVerticalScrollIndicator={false}
-      />
+      {searchItem.trim() === '' ? (
+        <FlatList
+          data={Notes}
+          renderItem={({item}) => (
+             <NotesCard title={item.title} preview={item.preview} date={item.date} darkMode={darkMode}/>
+          )}
+          keyExtractor={(item) => item.id.toString()}
+          contentContainerStyle={styles.listContent}
+          showsVerticalScrollIndicator={false}
+        />
+      ) : (
+        <FlatList
+          data={filteredNotes}
+          renderItem={({item}) => (
+             <NotesCard title={item.title} preview={item.preview} date={item.date} darkMode={darkMode}/>
+          )}
+          keyExtractor={(item) => item.id.toString()}
+          contentContainerStyle={styles.listContent}
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={
+            <Text style={{ textAlign: 'center', marginTop: 20, color: darkMode ? '#A0ADC0' : '#8F9BB3' }}>
+              No notes found for {searchItem}
+            </Text>
+          }
+        />
+      )}
     
     </SafeAreaView>
 
@@ -68,4 +85,3 @@ const filteredNotes=Notes.filter((note)=>(
 }
 
 export default NoteProfile
-

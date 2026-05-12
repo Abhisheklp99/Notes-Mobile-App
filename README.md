@@ -1,94 +1,55 @@
-#safe Area View
-#useSafeAreaInsets
-#intialWindowMatrics
+  # 📝 Notes App
 
-#stylesheets
-create,compose ,flatten
+  A beautifully designed, responsive Notes application built with React Native and Expo. 
 
+  ## ✨ Features
 
-#responsive design
-Dimension =>useWindowDimensions
-useColorScheme
-
+  - **Create & Edit Notes:** Easily note down your ideas with titles and descriptions, and edit them later.
+  - **Light & Dark Mode:** Adapts seamlessly to your device's theme with custom gorgeous gradients and tailored UI elements.
+  - **Responsive Layout:** Automatically adjusts from a standard list view on mobile devices to a sleek multi-column grid on tablets and larger screens.
+  - **Search & Filter:** Quickly find your notes using the built-in search functionality.
 
 
-screenheight -status screem(top) - navigationbar(bottom) =usbale screen
+  ## 🚀 Getting Started
 
-SafeAreaView -depreceated and only wokrs on ios 11th version not on android
-to
+  ### Prerequisites
 
-===To contro our content we use safereaview from expo
+  Make sure you have Node.js installed along with an Expo-compatible environment (iOS Simulator, Android Emulator, or the Expo Go app on your physical device).
 
+  ### Installation
 
+  1. Clone the repository and navigate into the project folder.
+  2. Install the project dependencies:
 
+    ```bash
+    npm install
+    ```
 
+  3. Start the Expo development server:
 
+    ```bash
+    npx expo start
+    ```
 
-// import { Text } from "@react-navigation/elements";
-// import React, { useState } from "react";
-// import { ScrollView, StyleSheet, TextInput, View} from "react-native";
+  4. Press `a` to open in Android, `i` to open in iOS, or scan the QR code using the Expo Go app.
 
-// import { SafeAreaView } from "react-native-safe-area-context";
+  ## 🛠️ Tech Stack
 
+  - React Native
+  - Expo
+  - TypeScript
+  - Expo Router
+  ## User Componnets
+  -FlatList
+  -TextInput
+  -Pressable
+  -Switch
+  -KeyboardAvoidingView
+  -ImageBackground ,i used LinearGradient for background UI
+  -useWindowDimensions()
+  -useColorScheme()
 
-// function UnSafeScreen(){
-//   return(
-//     <View style={{flex:1,backgroundColor:"#1c1c1c"}}>
-//       <Text style={{ color: "#fff", fontSize: 18, padding: 16 }}> Header (bleeds under notch!) </Text> <Text style={{ color: "#aaa", padding: 16 }}> This content might be hidden behind the status bar in dark mode. </Text> 
-//     </View>
-//   )
-// }
+  ## Demo Video
 
-
-// function SafeScreen(){
-//   return(
-//     <SafeAreaView  
-//     style={{
-//        backgroundColor:"#1c1c1c",flex:1
-//     }}
-//     edges={"top","bottom"}>
-//       <Text style={{ color: "#fff", fontSize: 18, padding: 16 }}> Header (bleeds under notch!) </Text> <Text style={{ color: "#aaa", padding: 16 }}> This content might be hidden behind the status bar in dark mode. </Text> 
-//     </SafeAreaView>
-//   )
-// }
-
-
-// const index = () => {
-//   const [email, setEmail] = useState("");
-
-//   return (
-//    <>
-//   <SafeScreen/>
-//    </>
-//   );
-// };
-
-
-
-// export default index;
-
-
-import { StatusBar, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
-
-const index = () => {
-  const insets=useSafeAreaInsets();
-  return (
-    <View
-    style={{
-             flex:1,
-             paddingTop:insets.top +12,
-             paddingBottom:insets.bottom,
-          }}
-    >
-      <StatusBar barStyle={"dark-content"} />
-      <Text>Home Screen</Text>
-    </View>
-  )
-}
-
-export default index
-
-const styles = StyleSheet.create({})
+  [Watch the Demo for Note Making ](https://www.linkedin.com/posts/abhishek16business_mobile-dev-cohort-completed-a-small-react-activity-7459916393518518273-8CO5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFi7BIUB2BXImxZmjchSlqhPhFWav7qln4Q)
+  [Watch the Demo for Note Card with Filter ](./src//videos/Notes-Filter.mp4)
